@@ -13,9 +13,9 @@ const products = [
     color: "Salmon",
     price: "$90.00",
     quantity: 1,
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
+    title:
       "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
   },
   {
@@ -25,9 +25,9 @@ const products = [
     color: "Blue",
     price: "$32.00",
     quantity: 1,
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
+    title:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
   // More products...
@@ -52,8 +52,8 @@ export default function Cart() {
                   <li key={product.id} className="flex py-6">
                     <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                       <img
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
+                        src={product.thumbnail}
+                        alt={product.title}
                         className="h-full w-full object-cover object-center"
                       />
                     </div>
