@@ -1,21 +1,29 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchCount } from "./cartAPI";
+import { addToCard, fetchItemsByUserId } from "./cartAPI";
 
 const initialState = {
   value: 0,
-  status: "idle",
+  items: [],
 };
 
-export const incrementAsync = createAsyncThunk(
-  "counter/fetchCount",
-  async (amount) => {
-    const response = await fetchCount(amount);
+export const addToCardAsync = createAsyncThunk(
+  "cart/addToCard",
+  async (item) => {
+    const response = await addToCard(item);
+    return response.data;
+  }
+);
+
+export const fetchItemsByUserIdAsync = createAsyncThunk(
+  "cart/fetchItemsByUserId",
+  async (userId) => {
+    const response = await fetchItemsByUserId(userId);
     return response.data;
   }
 );
 
 export const ProductSlice = createSlice({
-  name: "counter",
+  name: "cart",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -26,12 +34,20 @@ export const ProductSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(addToCardAsync.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
+      .addCase(addToCardAsync.fulfilled, (state, action) => {
         state.status = "idle";
-        state.value += action.payload;
+        state.items.push(action.payload);
+      })
+
+      .addCase(fetchItemsByUserIdAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchItemsByUserIdAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.items = action.payload;
       });
   },
 });
@@ -41,6 +57,6 @@ export const { increment, decrement, incrementByAmount } = ProductSlice.actions;
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectCount = (state) => state.counter.value;
+export const selectItems = (state) => state.cart.value;
 
 export default ProductSlice.reducer;
