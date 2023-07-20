@@ -1928,4 +1928,11 @@ brands.map((c) => ({
   label: c.split("-").join(" "),
   checked: false,
 }));
-console.log(brands);
+
+console.log(
+  brands.map((c) => ({
+    value: c,
+    label: c.split("-").join(" "),
+    checked: false,
+  }))
+);

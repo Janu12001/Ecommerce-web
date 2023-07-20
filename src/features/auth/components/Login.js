@@ -9,12 +9,13 @@ import { useForm } from "react-hook-form";
 export default function Login() {
   const dispatch = useDispatch();
   const error = useSelector(selectError);
+  const user = useSelector(selectLoggedInUser);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const user = useSelector(selectLoggedInUser);
+
   return (
     <>
       {user && <Navigate to="/" replace={true}></Navigate>}
@@ -35,7 +36,7 @@ export default function Login() {
             noValidate
             onSubmit={handleSubmit((data) => {
               dispatch(
-                checkUserAsync({ email: data.email, password: data.password })
+                checkUserAsync({ email: data.email, pasword: data.password })
               );
               console.log(data);
             })}

@@ -5,7 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import CartPage from "./pages/CartPage";
 import Checkout from "./pages/Checkout";
-import Protected from "./features/auth/components/protected";
+import Protected from "./features/auth/components/Protected";
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import {
