@@ -36,7 +36,7 @@ export default function Login() {
             noValidate
             onSubmit={handleSubmit((data) => {
               dispatch(
-                checkUserAsync({ email: data.email, pasword: data.password })
+                checkUserAsync({ email: data.email, password: data.password })
               );
               console.log(data);
             })}
