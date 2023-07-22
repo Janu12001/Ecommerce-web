@@ -86,6 +86,7 @@ function Checkout() {
     if (selectedAddress && paymentMethod) {
       const order = {
         items,
+        totalAmount,
         totalItems,
         user,
         paymentMethod,
