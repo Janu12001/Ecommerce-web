@@ -2613,5 +2613,250 @@
       "id": 10
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 0,
+          "id": 8
+        }
+      ],
+      "totalItems": 1,
+      "user": {
+        "email": "ak7616308@gmail.com",
+        "pasword": "Jaanu@123",
+        "addresses": [
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          },
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          }
+        ],
+        "id": 0
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Janu",
+        "email": "ak7616308@gmail.com",
+        "phone": "09682593043",
+        "street": "bhimtal",
+        "city": "nanitial",
+        "state": "Uttarakhand",
+        "pinCode": "263136"
+      },
+      "status": "pending",
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 0,
+          "id": 8
+        }
+      ],
+      "totalItems": 1,
+      "user": {
+        "email": "ak7616308@gmail.com",
+        "pasword": "Jaanu@123",
+        "addresses": [
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          },
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          }
+        ],
+        "id": 0
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Janu",
+        "email": "ak7616308@gmail.com",
+        "phone": "09682593043",
+        "street": "bhimtal",
+        "city": "nanitial",
+        "state": "Uttarakhand",
+        "pinCode": "263136"
+      },
+      "status": "pending",
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 1,
+          "user": 0,
+          "id": 9
+        }
+      ],
+      "totalItems": 1,
+      "user": {
+        "email": "ak7616308@gmail.com",
+        "pasword": "Jaanu@123",
+        "addresses": [
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          },
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          }
+        ],
+        "id": 0
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Janu",
+        "email": "ak7616308@gmail.com",
+        "phone": "09682593043",
+        "street": "bhimtal",
+        "city": "nanitial",
+        "state": "Uttarakhand",
+        "pinCode": "263136"
+      },
+      "status": "pending",
+      "id": 3
+    },
+    {
+      "items": [
+        {
+          "title": "Huawei P30",
+          "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+          "price": 499,
+          "discountPercentage": 10.58,
+          "rating": 4.09,
+          "stock": 32,
+          "brand": "Huawei",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/5/1.jpg",
+            "https://i.dummyjson.com/data/products/5/2.jpg",
+            "https://i.dummyjson.com/data/products/5/3.jpg"
+          ],
+          "quantity": 1,
+          "user": 0,
+          "id": 10
+        }
+      ],
+      "totalItems": 1,
+      "user": {
+        "email": "ak7616308@gmail.com",
+        "pasword": "Jaanu@123",
+        "addresses": [
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          },
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          }
+        ],
+        "id": 0
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Janu",
+        "email": "ak7616308@gmail.com",
+        "phone": "09682593043",
+        "street": "bhimtal",
+        "city": "nanitial",
+        "state": "Uttarakhand",
+        "pinCode": "263136"
+      },
+      "status": "pending",
+      "id": 4
+    }
+  ]
 }
