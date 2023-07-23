@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { resetOrder } from "../features/order/orderSlice";
 
 import { useDispatch, useSelector } from "react-redux";
-import { selectLoggedInUser } from "../features/auth/authSlice";
+
 import { resetCartAsync } from "../features/cart/cartSlice";
+import { selectUserInfo } from "../features/user/userSlice";
 
 function OrderSuccessPage() {
   const params = useParams();
   const dispatch = useDispatch();
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
 
   //for reset products in cart api
   useEffect(() => {
