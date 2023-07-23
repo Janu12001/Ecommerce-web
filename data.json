@@ -2683,6 +2683,152 @@
       },
       "status": "pending",
       "id": 4
+    },
+    {
+      "items": [
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 0,
+          "id": 1
+        },
+        {
+          "title": "iPhone X",
+          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+          "price": 899,
+          "discountPercentage": 17.94,
+          "rating": 4.44,
+          "stock": 34,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          ],
+          "quantity": 1,
+          "user": 0,
+          "id": 2
+        }
+      ],
+      "totalAmount": 1798,
+      "totalItems": 2,
+      "user": {
+        "email": "ak7616308@gmail.com",
+        "pasword": "Jaanu@123",
+        "addresses": [
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          },
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          }
+        ],
+        "id": 0
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Janu",
+        "email": "ak7616308@gmail.com",
+        "phone": "09682593043",
+        "street": "bhimtal",
+        "city": "nanitial",
+        "state": "Uttarakhand",
+        "pinCode": "263136"
+      },
+      "status": "pending",
+      "id": 5
+    },
+    {
+      "items": [
+        {
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+          "images": [
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
+          ],
+          "quantity": 1,
+          "user": 0,
+          "id": 2
+        }
+      ],
+      "totalAmount": 1749,
+      "totalItems": 1,
+      "user": {
+        "email": "ak7616308@gmail.com",
+        "pasword": "Jaanu@123",
+        "addresses": [
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          },
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          }
+        ],
+        "id": 0
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Janu",
+        "email": "ak7616308@gmail.com",
+        "phone": "09682593043",
+        "street": "bhimtal",
+        "city": "nanitial",
+        "state": "Uttarakhand",
+        "pinCode": "263136"
+      },
+      "status": "pending",
+      "id": 6
     }
   ]
 }
