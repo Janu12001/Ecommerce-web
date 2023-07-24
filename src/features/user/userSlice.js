@@ -24,9 +24,9 @@ export const fetchLoggedInUserAsync = createAsyncThunk(
 );
 
 export const updateUserAsync = createAsyncThunk(
-  "user/UpdateUser",
-  async (id) => {
-    const response = await updateUser(id);
+  "user/updateUser",
+  async (update) => {
+    const response = await updateUser(update);
     return response.data;
   }
 );
@@ -58,7 +58,7 @@ export const userSlice = createSlice({
       .addCase(updateUserAsync.fulfilled, (state, action) => {
         state.status = "idle";
         // this info can be different from logged in user info
-        state.userOrders = action.payload;
+        state.userInfo = action.payload;
       })
 
       .addCase(fetchLoggedInUserAsync.pending, (state) => {
