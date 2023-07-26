@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createUser, checkUser } from "./authAPI";
+import { createUser, checkUser, SignOut } from "./authAPI";
 import { updateUser } from "../user/userAPI";
 const initialState = {
   loggedInUser: null,
@@ -15,13 +15,13 @@ export const createUserAsync = createAsyncThunk(
   }
 );
 
-// export const updateUserAsync = createAsyncThunk(
-//   "user/updateUser",
-//   async (update) => {
-//     const response = await updateUser(update);
-//     return response.data;
-//   }
-// );
+export const updateUserAsync = createAsyncThunk(
+  "user/updateUser",
+  async (update) => {
+    const response = await updateUser(update);
+    return response.data;
+  }
+);
 
 export const checkUserAsync = createAsyncThunk(
   "user/checkUser",
@@ -31,7 +31,12 @@ export const checkUserAsync = createAsyncThunk(
   }
 );
 
-export const ProductSlice = createSlice({
+export const SignOutAsync = createAsyncThunk("user/SignOut", async (id) => {
+  const response = await SignOut(id);
+  return response.data;
+});
+
+export const authSlice = createSlice({
   name: "user",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
@@ -61,25 +66,34 @@ export const ProductSlice = createSlice({
       .addCase(checkUserAsync.rejected, (state, action) => {
         state.status = "idle";
         state.error = action.error;
+      })
+
+      .addCase(updateUserAsync.pending, (state) => {
+        state.status = "loading";
+      })
+
+      .addCase(updateUserAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.loggedInUser = action.payload;
+      })
+
+      .addCase(SignOutAsync.pending, (state) => {
+        state.status = "loading";
+      })
+
+      .addCase(SignOutAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.loggedInUser = null;
       });
-
-    // .addCase(updateUserAsync.pending, (state) => {
-    //   state.status = "loading";
-    // })
-
-    // .addCase(updateUserAsync.fulfilled, (state, action) => {
-    //   state.status = "idle";
-    //   state.loggedInUser = action.payload;
-    // });
   },
 });
 
 export const selectLoggedInUser = (state) => state.auth.loggedInUser;
 export const selectError = (state) => state.auth.error;
-export const { increment } = ProductSlice.actions;
+export const { increment } = authSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 
-export default ProductSlice.reducer;
+export default authSlice.reducer;
