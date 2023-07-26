@@ -52,7 +52,7 @@ export const resetCartAsync = createAsyncThunk(
   }
 );
 
-export const ProductSlice = createSlice({
+export const CartSlice = createSlice({
   name: "cart",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
@@ -112,11 +112,11 @@ export const ProductSlice = createSlice({
   },
 });
 
-export const { increment } = ProductSlice.actions;
+export const { increment } = CartSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectItems = (state) => state.cart.items;
 
-export default ProductSlice.reducer;
+export default CartSlice.reducer;
