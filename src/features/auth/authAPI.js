@@ -29,3 +29,11 @@ export function checkUser(loginInfo) {
     }
   });
 }
+
+export function SignOut(userId) {
+  return new Promise(async (resolve) => {
+    //Todo on server will remove user session info
+
+    resolve({ data: "success" });
+  });
+}
