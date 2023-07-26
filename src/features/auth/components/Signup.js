@@ -39,6 +39,8 @@ export default function Signup() {
                   email: data.email,
                   pasword: data.password,
                   addresses: [],
+                  role: "user",
+                  //Todo: this role can be directed on backend
                 })
               );
               console.log(data);
