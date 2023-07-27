@@ -2338,6 +2338,7 @@
     {
       "email": "ak7616308@gmail.com",
       "pasword": "Jaanu@123",
+      "role": "user",
       "addresses": [
         {
           "name": "Janu kumar",
@@ -2350,6 +2351,13 @@
         }
       ],
       "id": 0
+    },
+    {
+      "email": "admin@gmail.com",
+      "pasword": "Janu@123",
+      "addresses": [],
+      "role": "admin",
+      "id": 1
     }
   ],
   "cart": [
