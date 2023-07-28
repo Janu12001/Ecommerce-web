@@ -3,7 +3,7 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchAllProductByIdAsync,
+  fetchProductByIdAsync,
   selectProductById,
 } from "../../product/ProductSlice";
 import { useParams } from "react-router-dom";
@@ -94,7 +94,7 @@ export default function AdminProductDetail() {
   };
 
   useEffect(() => {
-    dispatch(fetchAllProductByIdAsync(params.id));
+    dispatch(fetchProductByIdAsync(params.id));
   }, [dispatch, params.id]);
 
   //TODO : in server data we will add color, size, highlights
