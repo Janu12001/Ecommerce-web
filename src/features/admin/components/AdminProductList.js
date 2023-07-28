@@ -785,9 +785,12 @@ export default function AdminProductList() {
 
               <div className="lg:col-span-3">
                 <div>
-                  <button className="rounded-md mx-10 my-5  bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  <Link
+                    to="/admin/product-form"
+                    className="rounded-md mx-10 my-5  bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
                     Add New Product
-                  </button>
+                  </Link>
                 </div>
                 <ProductGrid products={products}></ProductGrid>
               </div>
@@ -1102,13 +1105,21 @@ function ProductGrid({ products }) {
                       </p>
                     </div>
                   </div>
+                  {product.deleted && (
+                    <div>
+                      <p className="text-sm text-red-400">product deleted</p>
+                    </div>
+                  )}
                 </div>
               </Link>
               <div>
-                <div>
-                  <button className="rounded-md my-5  bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <div className="mt-5">
+                  <Link
+                    to={`/admin/product-form/edit/${product.id}`}
+                    className="rounded-md  bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
                     Edit Product
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
