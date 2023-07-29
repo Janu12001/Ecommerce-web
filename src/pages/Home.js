@@ -7,7 +7,6 @@ function Home() {
       <Navbar>
         <ProductList></ProductList>
       </Navbar>
-      <Link to="/admin"></Link>
     </div>
   );
 }
