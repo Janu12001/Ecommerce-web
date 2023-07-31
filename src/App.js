@@ -8,6 +8,7 @@ import Checkout from "./pages/Checkout";
 import Protected from "./features/auth/components/protected";
 import { useEffect } from "react";
 import * as React from "react";
+import { positions, Provider } from "react-alert";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -35,6 +36,8 @@ import ProtectedAdmin from "./features/auth/components/protectedAdmin";
 import ProductForm from "./features/admin/components/ProductForm";
 import AdminProductFormPage from "./pages/AdminProductFormPage";
 import AdminOrdersPage from "./pages/AdminOrdersPage";
+import AlertTemplate from "react-alert-template-basic";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -164,9 +167,16 @@ function App() {
   }, [dispatch, user]);
 
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <>
+      <div className="App">
+        {
+          <Provider template={AlertTemplate}>
+            <RouterProvider router={router} />
+          </Provider>
+        }
+        {/* Link must be inside the Provider */}
+      </div>
+    </>
   );
 }
 

@@ -6,8 +6,8 @@
       "description": "An apple mobile which is nothing like apple",
       "price": 9000,
       "discountPercentage": 12.96,
-      "rating": 0,
-      "stock": 94,
+      "rating": 4.3,
+      "stock": 0,
       "brand": "Apple",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
@@ -35,11 +35,12 @@
         "https://i.dummyjson.com/data/products/2/2.jpg",
         "https://i.dummyjson.com/data/products/2/3.jpg",
         "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-      ]
+      ],
+      "deleted": true
     },
     {
       "id": 3,
-      "title": "Samsung Universe 9",
+      "title": "Samsung Universe 10",
       "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
       "price": 1249,
       "discountPercentage": 15.46,
@@ -51,8 +52,10 @@
       "images": [
         "https://i.dummyjson.com/data/products/3/1.jpg",
         "https://i.dummyjson.com/data/products/3/1.jpg",
-        "https://i.dummyjson.com/data/products/3/1.jpg"
-      ]
+        "https://i.dummyjson.com/data/products/3/1.jpg",
+        "https://i.dummyjson.com/data/products/3/thumbnail.jpg"
+      ],
+      "deleted": true
     },
     {
       "id": 4,
@@ -217,7 +220,8 @@
         "https://i.dummyjson.com/data/products/12/3.png",
         "https://i.dummyjson.com/data/products/12/4.jpg",
         "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
-      ]
+      ],
+      "deleted": true
     },
     {
       "id": 13,
@@ -2385,24 +2389,46 @@
   ],
   "cart": [
     {
-      "title": "Samsung Galaxy Book",
-      "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
-      "price": 1499,
-      "discountPercentage": 4.15,
-      "rating": 4.25,
-      "stock": 50,
-      "brand": "Samsung",
-      "category": "laptops",
-      "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
+      "title": "OPPOF19",
+      "description": "OPPO F19 is officially announced on April 2021.",
+      "price": 280,
+      "discountPercentage": 17.91,
+      "rating": 4.3,
+      "stock": 123,
+      "brand": "OPPO",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
       "images": [
-        "https://i.dummyjson.com/data/products/7/1.jpg",
-        "https://i.dummyjson.com/data/products/7/2.jpg",
-        "https://i.dummyjson.com/data/products/7/3.jpg",
-        "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+        "https://i.dummyjson.com/data/products/4/1.jpg",
+        "https://i.dummyjson.com/data/products/4/2.jpg",
+        "https://i.dummyjson.com/data/products/4/3.jpg",
+        "https://i.dummyjson.com/data/products/4/4.jpg",
+        "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
       ],
+      "productId": 4,
       "quantity": 1,
       "user": 0,
-      "id": 1
+      "id": 2
+    },
+    {
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg",
+        "https://i.dummyjson.com/data/products/3/1.jpg",
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ],
+      "productId": 3,
+      "quantity": 1,
+      "user": 0,
+      "id": 3
     }
   ],
   "orders": [
@@ -2501,7 +2527,7 @@
         "state": "Uttarakhand",
         "pinCode": "263136"
       },
-      "status": "pending",
+      "status": "dispatched",
       "id": 1
     },
     {
@@ -2599,7 +2625,7 @@
         "state": "Uttarakhand",
         "pinCode": "263136"
       },
-      "status": "pending",
+      "status": "dispatched",
       "id": 2
     },
     {
@@ -2807,7 +2833,7 @@
         "state": "Uttarakhand",
         "pinCode": "263136"
       },
-      "status": "pending",
+      "status": "delivered",
       "id": 5
     },
     {
@@ -2870,7 +2896,7 @@
         "state": "Uttarakhand",
         "pinCode": "263136"
       },
-      "status": "pending",
+      "status": "cancelled",
       "id": 6
     },
     {
