@@ -19,7 +19,11 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 
 import { fetchItemsByUserIdAsync } from "./features/cart/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { selectLoggedInUser } from "./features/auth/authSlice";
+import {
+  checkAuthAsync,
+  selectLoggedInUser,
+  selectUserChecked,
+} from "./features/auth/authSlice";
 import PageNotFound from "./pages/404";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import UserOrders from "./features/user/components/UserOrders";
@@ -37,7 +41,12 @@ import ProductForm from "./features/admin/components/ProductForm";
 import AdminProductFormPage from "./pages/AdminProductFormPage";
 import AdminOrdersPage from "./pages/AdminOrdersPage";
 import AlertTemplate from "react-alert-template-basic";
+import StripeCheckout from "./pages/stripeCheckout";
 
+const options = {
+  timeout: 5000,
+  position: positions.BOTTOM_LEFT,
+};
 const router = createBrowserRouter([
   {
     path: "/",
@@ -85,36 +94,20 @@ const router = createBrowserRouter([
 
   {
     path: "/admin/product-detail/:id",
-    element: (
-      <ProtectedAdmin>
-        <AdminProductDetailPage></AdminProductDetailPage>
-      </ProtectedAdmin>
-    ),
+    element: <AdminProductDetailPage></AdminProductDetailPage>,
   },
   {
     path: "/admin/product-form",
-    element: (
-      <ProtectedAdmin>
-        <AdminProductFormPage></AdminProductFormPage>
-      </ProtectedAdmin>
-    ),
+    element: <AdminProductFormPage></AdminProductFormPage>,
   },
 
   {
     path: "/admin/orders",
-    element: (
-      <ProtectedAdmin>
-        <AdminOrdersPage></AdminOrdersPage>
-      </ProtectedAdmin>
-    ),
+    element: <AdminOrdersPage></AdminOrdersPage>,
   },
   {
     path: "/admin/product-form/edit/:id",
-    element: (
-      <ProtectedAdmin>
-        <AdminProductFormPage></AdminProductFormPage>
-      </ProtectedAdmin>
-    ),
+    element: <AdminProductFormPage></AdminProductFormPage>,
   },
 
   {
@@ -128,21 +121,41 @@ const router = createBrowserRouter([
 
   {
     path: "/order-success/:id",
-    element: <OrderSuccessPage></OrderSuccessPage>,
+    element: (
+      <Protected>
+        <OrderSuccessPage></OrderSuccessPage>
+      </Protected>
+    ),
   },
 
   {
     path: "/orders",
-    element: <UserOrdersPage></UserOrdersPage>,
+    element: (
+      <Protected>
+        <UserOrdersPage></UserOrdersPage>{" "}
+      </Protected>
+    ),
   },
 
   {
     path: "/profile",
-    element: <UserProfilePage></UserProfilePage>,
+    element: (
+      <Protected>
+        <UserProfilePage></UserProfilePage>{" "}
+      </Protected>
+    ),
   },
   {
     path: "/logout",
     element: <Logout></Logout>,
+  },
+  {
+    path: "/stripe-checkout/",
+    element: (
+      <Protected>
+        <StripeCheckout></StripeCheckout>
+      </Protected>
+    ),
   },
 
   {
@@ -158,22 +171,28 @@ const router = createBrowserRouter([
 function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
+  const userChecked = useSelector(selectUserChecked);
+
+  useEffect(() => {
+    dispatch(checkAuthAsync());
+  }, [dispatch]);
 
   useEffect(() => {
     if (user) {
-      dispatch(fetchItemsByUserIdAsync(user.id));
-      dispatch(fetchLoggedInUserAsync(user.id));
+      dispatch(fetchItemsByUserIdAsync());
+      dispatch(fetchLoggedInUserAsync());
     }
   }, [dispatch, user]);
 
   return (
     <>
       <div className="App">
-        {
-          <Provider template={AlertTemplate}>
+        {userChecked && (
+          <Provider template={AlertTemplate} {...options}>
             <RouterProvider router={router} />
           </Provider>
-        }
+        )}
+
         {/* Link must be inside the Provider */}
       </div>
     </>
