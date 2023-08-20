@@ -4,7 +4,7 @@ import { selectUserInfo, updateUserAsync } from "../userSlice";
 import { useForm } from "react-hook-form";
 export default function UserProfile() {
   const dispatch = useDispatch();
-  const user = useSelector(selectUserInfo);
+  const userInfo = useSelector(selectUserInfo);
   const [selectedEditIndex, setSelectedEditIndex] = useState(-1);
   const [showAddAddressForm, setShowAddAddressForm] = useState(false);
   //form handling
@@ -18,7 +18,7 @@ export default function UserProfile() {
 
   //handle Edit for my profile page
   const handleEdit = (addressUpdate, index) => {
-    const newUser = { ...user, addresses: [...user.addresses] };
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses] };
     newUser.addresses.splice(index, 1, addressUpdate);
     dispatch(updateUserAsync(newUser));
     setSelectedEditIndex(-1);
@@ -26,7 +26,7 @@ export default function UserProfile() {
 
   //handle  Remove for my profile page
   const handleRemove = (e, index) => {
-    const newUser = { ...user, addresses: [...user.addresses] };
+    const newUser = { ...userInfo, addresses: [...userInfo.addresses] };
     newUser.addresses.splice(index, 1);
     dispatch(updateUserAsync(newUser));
   };
@@ -34,7 +34,7 @@ export default function UserProfile() {
   //handle Edit form
   const handleEditForm = (index) => {
     setSelectedEditIndex(index);
-    const address = user.addresses[index];
+    const address = userInfo.addresses[index];
     setValue("name", address.name);
     setValue("email", address.email);
     setValue("city", address.city);
@@ -46,7 +46,10 @@ export default function UserProfile() {
 
   //handle Address Form
   const handleAdd = (address) => {
-    const newUser = { ...user, addresses: [...user.addresses, address] };
+    const newUser = {
+      ...userInfo,
+      addresses: [...userInfo.addresses, address],
+    };
     dispatch(updateUserAsync(newUser));
     setShowAddAddressForm(false);
   };
@@ -56,14 +59,14 @@ export default function UserProfile() {
       <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
           <h1 className="text-4xl my-5 font-bold tracking-tight text-gray-900">
-            Name:{user.name ? user.name : "New User"}
+            Name:{userInfo.name ? userInfo.name : "New User"}
           </h1>
           <h3 className="text-xl my-5 font-bold tracking-tight text-red-900">
-            email address: {user.email}
+            email address: {userInfo.email}
           </h3>
-          {user.role === "admin" && (
+          {userInfo.role === "admin" && (
             <h3 className="text-xl my-5 font-bold tracking-tight text-red-900">
-              role: {user.role}
+              role: {userInfo.role}
             </h3>
           )}
         </div>
@@ -249,8 +252,8 @@ export default function UserProfile() {
           ) : null}
 
           <p className="mt-0.5 text-sm text-gray-500">Your Addresses :</p>
-          {user.addresses.map((address, index) => (
-            <div>
+          {userInfo.addresses.map((address, index) => (
+            <div key={index}>
               {selectedEditIndex === index ? (
                 <form
                   className="bg-white px-5 py-12 mt-12"
