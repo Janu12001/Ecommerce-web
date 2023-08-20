@@ -14,7 +14,7 @@ import {
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import Modal from "../../common/Modal";
-
+import { useAlert } from "react-alert";
 function ProductForm() {
   const {
     register,
@@ -31,6 +31,7 @@ function ProductForm() {
   const params = useParams();
   const selectedProduct = useSelector(selectProductById);
   const [openModal, setOpenModal] = useState(null);
+  const alert = useAlert();
   useEffect(() => {
     if (params.id) {
       dispatch(fetchProductByIdAsync(params.id));
@@ -63,7 +64,6 @@ function ProductForm() {
 
   return (
     <>
-      {" "}
       <form
         noValidate
         onSubmit={handleSubmit((data) => {
@@ -85,10 +85,13 @@ function ProductForm() {
           if (params.id) {
             product.id = params.id;
             product.rating = selectedProduct.rating || 0;
+
             dispatch(updateProductAsync(product));
+            alert.success("Product Updated");
             reset();
           } else {
             dispatch(createProductAsync(product));
+            alert.success("Product Created");
             reset();
           }
         })}
@@ -100,11 +103,12 @@ function ProductForm() {
             </h2>
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-              {selectedProduct.deleted && (
+              {selectedProduct && selectedProduct.deleted && (
                 <h2 className="text-red-500 sm:col-span-6">
                   This product is deleted
                 </h2>
               )}
+
               <div className="sm:col-span-6">
                 <label
                   htmlFor="title"
@@ -123,7 +127,6 @@ function ProductForm() {
                   </div>
                 </div>
               </div>
-
               <div className="col-span-full">
                 <label
                   htmlFor="description"
@@ -146,7 +149,6 @@ function ProductForm() {
                   Write a few sentences about product.
                 </p>
               </div>
-
               <div className="col-span-full">
                 <label
                   htmlFor="brand"
@@ -160,12 +162,11 @@ function ProductForm() {
                   >
                     <option value="">--Choose brand--</option>
                     {brands.map((brand) => (
-                      <option value={brand.value}>{brand.label}</option>
+                      <option key={brand.value}>{brand.label}</option>
                     ))}
                   </select>
                 </div>
               </div>
-
               <div className="col-span-full">
                 <label
                   htmlFor="category"
@@ -181,12 +182,11 @@ function ProductForm() {
                   >
                     <option value="">--Choose category--</option>
                     {categories.map((category) => (
-                      <option value={category.value}>{category.label}</option>
+                      <option key={category.value}>{category.label}</option>
                     ))}
                   </select>
                 </div>
               </div>
-
               <div className="sm:col-span-2">
                 <label
                   htmlFor="Price"
@@ -209,10 +209,9 @@ function ProductForm() {
                   </div>
                 </div>
               </div>
-
               <div className="sm:col-span-2">
                 <label
-                  htmlFor="Stock"
+                  htmlFor="stock"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
                   Stock
@@ -231,7 +230,6 @@ function ProductForm() {
                   </div>
                 </div>
               </div>
-
               <div className="sm:col-span-2">
                 <label
                   htmlFor="discountPercentage"
@@ -443,15 +441,17 @@ function ProductForm() {
           </button>
         </div>
       </form>
-      <Modal
-        title={`Delete ${selectedProduct.title}`}
-        message="Are you sure you want to delete this  Product?"
-        dangerOption="Delete"
-        cancelOption="Cancel"
-        dangerAction={handleDelete}
-        cancelAction={() => setOpenModal(null)}
-        showModal={openModal}
-      ></Modal>
+      {selectedProduct && (
+        <Modal
+          title={`Delete ${selectedProduct.title}`}
+          message="Are you sure you want to delete this  Product?"
+          dangerOption="Delete"
+          cancelOption="Cancel"
+          dangerAction={handleDelete}
+          cancelAction={() => setOpenModal(null)}
+          showModal={openModal}
+        ></Modal>
+      )}
     </>
   );
 }

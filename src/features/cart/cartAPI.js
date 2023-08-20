@@ -1,6 +1,6 @@
 export function addToCard(item) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8080/cart", {
+    const response = await fetch("/cart", {
       method: "POST",
       body: JSON.stringify(item),
       headers: { "content-type": "application/json" },
@@ -11,10 +11,10 @@ export function addToCard(item) {
   });
 }
 
-export function fetchItemsByUserId(userId) {
+export function fetchItemsByUserId() {
   return new Promise(async (resolve) => {
     //TODO: we will not hard-code server url heree
-    const response = await fetch("http://localhost:8080/cart?user=" + userId);
+    const response = await fetch("/cart");
     const data = await response.json();
     resolve({ data });
   });
@@ -22,7 +22,7 @@ export function fetchItemsByUserId(userId) {
 
 export function updateCart(update) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8080/cart/" + update.id, {
+    const response = await fetch("/cart/" + update.id, {
       method: "PATCH",
       body: JSON.stringify(update),
       headers: { "content-type": "application/json" },
@@ -35,7 +35,7 @@ export function updateCart(update) {
 
 export function deleteItemFromCart(itemId) {
   return new Promise(async (resolve) => {
-    const response = await fetch("http://localhost:8080/cart/" + itemId, {
+    const response = await fetch("/cart/" + itemId, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     });
@@ -45,10 +45,10 @@ export function deleteItemFromCart(itemId) {
   });
 }
 
-export function resetCart(userId) {
+export function resetCart() {
   //get all the item of user and delete all item from card
   return new Promise(async (resolve) => {
-    const response = await fetchItemsByUserId(userId);
+    const response = await fetchItemsByUserId();
     const items = response.data;
     for (let item of items) {
       await deleteItemFromCart(item.id);

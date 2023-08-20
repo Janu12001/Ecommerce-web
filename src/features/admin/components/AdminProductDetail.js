@@ -8,7 +8,7 @@ import {
 } from "../../product/ProductSlice";
 import { useParams } from "react-router-dom";
 import { addToCardAsync } from "../../cart/cartSlice";
-import { selectLoggedInUser } from "../../auth/authSlice";
+
 import { discountedPrice } from "../../../app/constants";
 
 const colors = [
@@ -35,7 +35,6 @@ const highlights = [
   "Ultra-soft 100% cotton",
 ];
 
-// const product = {
 //   name: "Basic Tee 6-Pack",
 //   price: "$192",
 //   href: "#",
@@ -81,7 +80,7 @@ function classNames(...classes) {
 export default function AdminProductDetail() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState(sizes[2]);
-  const user = useSelector(selectLoggedInUser);
+
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams();
@@ -89,7 +88,7 @@ export default function AdminProductDetail() {
   //handlecart function
   const handleCart = (e) => {
     e.preventDefault();
-    const newItem = { ...product, quantity: 1, user: user.id };
+    const newItem = { ...product, quantity: 1 };
     delete newItem["id"];
     dispatch(addToCardAsync(newItem));
   };

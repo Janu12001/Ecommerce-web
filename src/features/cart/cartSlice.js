@@ -10,6 +10,7 @@ import {
 const initialState = {
   status: "idle",
   items: [],
+  cartLoaded: false,
 };
 
 export const addToCardAsync = createAsyncThunk(
@@ -22,8 +23,8 @@ export const addToCardAsync = createAsyncThunk(
 
 export const fetchItemsByUserIdAsync = createAsyncThunk(
   "cart/fetchItemsByUserId",
-  async (userId) => {
-    const response = await fetchItemsByUserId(userId);
+  async () => {
+    const response = await fetchItemsByUserId();
     return response.data;
   }
 );
@@ -44,13 +45,10 @@ export const deleteItemFromCartAsync = createAsyncThunk(
   }
 );
 
-export const resetCartAsync = createAsyncThunk(
-  "cart/resetCart",
-  async (userId) => {
-    const response = await resetCart(userId);
-    return response.data;
-  }
-);
+export const resetCartAsync = createAsyncThunk("cart/resetCart", async () => {
+  const response = await resetCart();
+  return response.data;
+});
 
 export const CartSlice = createSlice({
   name: "cart",
@@ -78,6 +76,12 @@ export const CartSlice = createSlice({
       .addCase(fetchItemsByUserIdAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.items = action.payload;
+        state.cartLoaded = true;
+      })
+      .addCase(fetchItemsByUserIdAsync.rejected, (state, action) => {
+        state.status = "idle";
+
+        state.cartLoaded = true;
       })
 
       .addCase(updateCartAsync.pending, (state) => {
@@ -119,4 +123,5 @@ export const { increment } = CartSlice.actions;
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectItems = (state) => state.cart.items;
 export const selectCartStatus = (state) => state.cart.status;
+export const selectCartLoaded = (state) => state.cart.cartLoaded;
 export default CartSlice.reducer;

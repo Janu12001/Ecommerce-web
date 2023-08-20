@@ -37,7 +37,7 @@ export default function Signup() {
               dispatch(
                 createUserAsync({
                   email: data.email,
-                  pasword: data.password,
+                  password: data.password,
                   addresses: [],
                   role: "user",
                   //Todo: this role can be directed on backend
@@ -80,14 +80,6 @@ export default function Signup() {
                 >
                   Password
                 </label>
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
               </div>
               <div className="mt-2">
                 <input

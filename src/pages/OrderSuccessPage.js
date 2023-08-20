@@ -15,10 +15,10 @@ function OrderSuccessPage() {
   //for reset products in cart api
   useEffect(() => {
     //reset cart
-    dispatch(resetCartAsync(user.id));
+    dispatch(resetCartAsync());
     dispatch(resetOrder());
     //reset currentorder
-  }, [dispatch, user]);
+  }, [dispatch]);
 
   return (
     <>

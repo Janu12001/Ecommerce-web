@@ -2368,7 +2368,7 @@
       "role": "user",
       "addresses": [
         {
-          "name": "Janu kumar",
+          "name": "Janu",
           "email": "ak7616308@gmail.com",
           "phone": "09682593043",
           "street": "bhimtal",
@@ -2387,50 +2387,7 @@
       "id": 1
     }
   ],
-  "cart": [
-    {
-      "title": "OPPOF19",
-      "description": "OPPO F19 is officially announced on April 2021.",
-      "price": 280,
-      "discountPercentage": 17.91,
-      "rating": 4.3,
-      "stock": 123,
-      "brand": "OPPO",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/4/1.jpg",
-        "https://i.dummyjson.com/data/products/4/2.jpg",
-        "https://i.dummyjson.com/data/products/4/3.jpg",
-        "https://i.dummyjson.com/data/products/4/4.jpg",
-        "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
-      ],
-      "productId": 4,
-      "quantity": 1,
-      "user": 0,
-      "id": 2
-    },
-    {
-      "title": "Samsung Universe 9",
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
-      "discountPercentage": 15.46,
-      "rating": 4.09,
-      "stock": 36,
-      "brand": "Samsung",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/3/1.jpg",
-        "https://i.dummyjson.com/data/products/3/1.jpg",
-        "https://i.dummyjson.com/data/products/3/1.jpg"
-      ],
-      "productId": 3,
-      "quantity": 1,
-      "user": 0,
-      "id": 3
-    }
-  ],
+  "cart": [],
   "orders": [
     {
       "items": [
@@ -2686,7 +2643,7 @@
         "state": "Uttarakhand",
         "pinCode": "263136"
       },
-      "status": "pending",
+      "status": "delivered",
       "id": 3
     },
     {
@@ -3167,6 +3124,160 @@
       },
       "status": "pending",
       "id": 11
+    },
+    {
+      "items": [
+        {
+          "title": "OPPOF19",
+          "description": "OPPO F19 is officially announced on April 2021.",
+          "price": 280,
+          "discountPercentage": 17.91,
+          "rating": 4.3,
+          "stock": 123,
+          "brand": "OPPO",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/4/1.jpg",
+            "https://i.dummyjson.com/data/products/4/2.jpg",
+            "https://i.dummyjson.com/data/products/4/3.jpg",
+            "https://i.dummyjson.com/data/products/4/4.jpg",
+            "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+          ],
+          "productId": 4,
+          "quantity": 1,
+          "user": 0,
+          "id": 2
+        },
+        {
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/3/1.jpg",
+            "https://i.dummyjson.com/data/products/3/1.jpg",
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "productId": 3,
+          "quantity": 1,
+          "user": 0,
+          "id": 3
+        },
+        {
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+          "images": [
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
+          ],
+          "productId": 6,
+          "quantity": 1,
+          "user": 0,
+          "id": 4
+        }
+      ],
+      "totalAmount": 2842,
+      "totalItems": 3,
+      "user": {
+        "email": "ak7616308@gmail.com",
+        "pasword": "Jaanu@123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          }
+        ],
+        "id": 0
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Janu",
+        "email": "ak7616308@gmail.com",
+        "phone": "09682593043",
+        "street": "bhimtal",
+        "city": "nanitial",
+        "state": "Uttarakhand",
+        "pinCode": "263136"
+      },
+      "status": "pending",
+      "id": 12
+    },
+    {
+      "items": [
+        {
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+          "images": [
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
+          ],
+          "productId": 6,
+          "quantity": 1,
+          "user": 0,
+          "id": 4
+        }
+      ],
+      "totalAmount": 1556,
+      "totalItems": 1,
+      "user": {
+        "email": "ak7616308@gmail.com",
+        "pasword": "Jaanu@123",
+        "role": "user",
+        "addresses": [
+          {
+            "name": "Janu",
+            "email": "ak7616308@gmail.com",
+            "phone": "09682593043",
+            "street": "bhimtal",
+            "city": "nanitial",
+            "state": "Uttarakhand",
+            "pinCode": "263136"
+          }
+        ],
+        "id": 0
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Janu",
+        "email": "ak7616308@gmail.com",
+        "phone": "09682593043",
+        "street": "bhimtal",
+        "city": "nanitial",
+        "state": "Uttarakhand",
+        "pinCode": "263136"
+      },
+      "status": "pending",
+      "id": 13
     }
   ]
 }
