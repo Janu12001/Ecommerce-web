@@ -38,8 +38,8 @@ export const checkAuthAsync = createAsyncThunk("user/checkAuth", async () => {
   }
 });
 
-export const SignOutAsync = createAsyncThunk("user/SignOut", async (id) => {
-  const response = await SignOut(id);
+export const SignOutAsync = createAsyncThunk("user/SignOut", async () => {
+  const response = await SignOut();
   return response.data;
 });
 

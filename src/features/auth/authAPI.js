@@ -33,10 +33,21 @@ export function loginUser(loginInfo) {
 }
 
 export function SignOut(userId) {
-  return new Promise(async (resolve) => {
+  return new Promise(async (resolve, reject) => {
     //Todo on server will remove user session info
 
-    resolve({ data: "success" });
+    try {
+      const response = await fetch("/auth/logout");
+      if (response.ok) {
+        resolve({ data: "success" });
+      } else {
+        const error = await response.text();
+        reject(error);
+      }
+    } catch (error) {
+      console.log(error);
+      reject(error);
+    }
   });
 }
 export function checkAuth() {
