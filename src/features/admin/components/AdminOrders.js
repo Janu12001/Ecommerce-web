@@ -196,7 +196,7 @@ function AdminOrders() {
                       </td>
                       <td className="py-3 px-6 text-center">
                         <div className="flex items-center justify-center">
-                          {order.PaymentMethod}
+                          {order.paymentMethod}
                         </div>
                       </td>
 

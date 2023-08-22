@@ -32,7 +32,7 @@ export function loginUser(loginInfo) {
   });
 }
 
-export function SignOut(userId) {
+export function SignOut() {
   return new Promise(async (resolve, reject) => {
     //Todo on server will remove user session info
 

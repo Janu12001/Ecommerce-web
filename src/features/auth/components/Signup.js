@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 export default function Signup() {
   const dispatch = useDispatch();
+  const user = useSelector(selectLoggedInUser);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const user = useSelector(selectLoggedInUser);
 
   console.log(errors);
   return (
