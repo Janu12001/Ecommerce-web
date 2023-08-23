@@ -2,8 +2,14 @@ import React, { useState } from "react";
 
 import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { resetPasswordRequest } from "../authAPI";
+import { resetPasswordRequestAsync, selectMailSent } from "../authSlice";
 
-export default function ForgotP() {
+export default function ForgotPassword() {
+  const mailSent = useSelector(selectMailSent);
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -29,6 +35,7 @@ export default function ForgotP() {
             noValidate
             onSubmit={handleSubmit((data) => {
               console.log(data);
+              dispatch(resetPasswordRequestAsync(data.email));
             })}
             className="space-y-6"
           >
@@ -55,6 +62,7 @@ export default function ForgotP() {
                 {errors.email && (
                   <p className="text-red-500">{errors.email.message}</p>
                 )}
+                {mailSent && <p className="text-green-500">MailSent</p>}
               </div>
             </div>
 
