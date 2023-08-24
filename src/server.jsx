@@ -1,0 +1,1 @@
+export const backend_Url = "https://mern-ecommerce-d82j.onrender.com";

@@ -1,7 +1,9 @@
 // A mock function to mimic making an async request for data
+import { backend_Url } from "../../server";
+
 export function createUser(userData) {
   return new Promise(async (resolve) => {
-    const response = await fetch("/auth/signup", {
+    const response = await fetch(`${backend_Url}/auth/signup`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: { "content-type": "application/json" },
@@ -14,14 +16,11 @@ export function createUser(userData) {
 export function loginUser(loginInfo) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch(
-        "https://mern-ecommerce-d82j.onrender.com/auth/login",
-        {
-          method: "POST",
-          body: JSON.stringify(loginInfo),
-          headers: { "content-type": "application/json" },
-        }
-      );
+      const response = await fetch(`${backend_Url}/auth/login`, {
+        method: "POST",
+        body: JSON.stringify(loginInfo),
+        headers: { "content-type": "application/json" },
+      });
       if (response.ok) {
         const data = await response.json();
         resolve({ data });
@@ -40,7 +39,7 @@ export function SignOut(userId) {
     //Todo on server will remove user session info
 
     try {
-      const response = await fetch("/auth/logout");
+      const response = await fetch(`${backend_Url}/auth/logout`);
       if (response.ok) {
         resolve({ data: "success" });
       } else {
@@ -73,11 +72,14 @@ export function checkAuth() {
 export function resetPasswordRequest(email) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("/auth/reset-password-request", {
-        method: "POST",
-        body: JSON.stringify({ email }),
-        headers: { "content-type": "application/json" },
-      });
+      const response = await fetch(
+        `${backend_Url}/auth/reset-password-request`,
+        {
+          method: "POST",
+          body: JSON.stringify({ email }),
+          headers: { "content-type": "application/json" },
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         resolve({ data });
@@ -94,7 +96,7 @@ export function resetPasswordRequest(email) {
 export function resetPassword(data) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("/auth/reset-password", {
+      const response = await fetch(`${backend_Url}/auth/reset-password`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "content-type": "application/json" },
