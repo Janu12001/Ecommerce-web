@@ -1,7 +1,6 @@
 {
   "name": "ecommerce-website",
   "version": "0.1.0",
-  "proxy": "https://mern-ecommerce-d82j.onrender.com",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.15",
