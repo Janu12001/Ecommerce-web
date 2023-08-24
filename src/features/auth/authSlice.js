@@ -26,7 +26,7 @@ export const createUserAsync = createAsyncThunk(
 );
 
 export const loginUserAsync = createAsyncThunk(
-  "https://mern-ecommerce-d82j.onrender.com/user/loginUser",
+  "/user/loginUser",
   async (loginInfo, { rejectWithValue }) => {
     try {
       const response = await loginUser(loginInfo);
