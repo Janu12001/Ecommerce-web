@@ -1,14 +1,11 @@
 // A mock function to mimic making an async request for data
 export function createOrder(order) {
   return new Promise(async (resolve) => {
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/orders",
-      {
-        method: "POST",
-        body: JSON.stringify(order),
-        headers: { "content-type": "application/json" },
-      }
-    );
+    const response = await fetch("/orders", {
+      method: "POST",
+      body: JSON.stringify(order),
+      headers: { "content-type": "application/json" },
+    });
     const data = await response.json();
 
     resolve({ data });
@@ -17,14 +14,11 @@ export function createOrder(order) {
 
 export function updateOrder(order) {
   return new Promise(async (resolve) => {
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/orders/" + order.id,
-      {
-        method: "PATCH",
-        body: JSON.stringify(order),
-        headers: { "content-type": "application/json" },
-      }
-    );
+    const response = await fetch("/orders/" + order.id, {
+      method: "PATCH",
+      body: JSON.stringify(order),
+      headers: { "content-type": "application/json" },
+    });
     const data = await response.json();
 
     resolve({ data });
@@ -44,9 +38,7 @@ export function fetchAllOrders(sort, pagination) {
 
   return new Promise(async (resolve) => {
     //TODO: we will not hard-code server url heree
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/orders?" + queryString
-    );
+    const response = await fetch("/orders?" + queryString);
     const data = await response.json();
     const totalOrders = await response.headers.get("X-Total-Count");
     resolve({ data: { orders: data, totalOrders: +totalOrders } });

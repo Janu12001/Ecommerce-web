@@ -3,9 +3,7 @@
 export function fetchProductsById(id) {
   return new Promise(async (resolve) => {
     //TODO: we will not hard-code server url heree
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/products/" + id
-    );
+    const response = await fetch("/products/" + id);
     const data = await response.json();
     resolve({ data });
   });
@@ -14,28 +12,22 @@ export function fetchProductsById(id) {
 export function createProduct(product) {
   return new Promise(async (resolve) => {
     //TODO: we will not hard-code server url heree
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/products/",
-      {
-        method: "POST",
-        body: JSON.stringify(product),
-        headers: { "content-type": "application/json" },
-      }
-    );
+    const response = await fetch("/products/", {
+      method: "POST",
+      body: JSON.stringify(product),
+      headers: { "content-type": "application/json" },
+    });
     const data = await response.json();
     resolve({ data });
   });
 }
 export function updateProduct(update) {
   return new Promise(async (resolve) => {
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/products/" + update.id,
-      {
-        method: "PATCH",
-        body: JSON.stringify(update),
-        headers: { "content-type": "application/json" },
-      }
-    );
+    const response = await fetch("/products/" + update.id, {
+      method: "PATCH",
+      body: JSON.stringify(update),
+      headers: { "content-type": "application/json" },
+    });
     const data = await response.json();
 
     resolve({ data });
@@ -72,9 +64,7 @@ export function fetchProductsByFilters(filter, sort, pagination, admin) {
   }
   return new Promise(async (resolve) => {
     //TODO: we will not hard-code server url heree
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/products?" + queryString
-    );
+    const response = await fetch("/products?" + queryString);
     const data = await response.json();
     const totalItems = await response.headers.get("X-Total-Count");
     resolve({ data: { products: data, totalItems: +totalItems } });
@@ -84,9 +74,7 @@ export function fetchProductsByFilters(filter, sort, pagination, admin) {
 export function fetchCategories() {
   return new Promise(async (resolve) => {
     //TODO: we will not hard-code server url heree
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/categories"
-    );
+    const response = await fetch("/categories");
     const data = await response.json();
     resolve({ data });
   });
@@ -95,9 +83,7 @@ export function fetchCategories() {
 export function fetchBrands() {
   return new Promise(async (resolve) => {
     //TODO: we will not hard-code server url heree
-    const response = await fetch(
-      "https://mern-ecommerce-d82j.onrender.com/brands"
-    );
+    const response = await fetch("/brands");
     const data = await response.json();
     resolve({ data });
   });
